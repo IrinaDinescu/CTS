@@ -41,7 +41,7 @@ public class Zoo {
 		animals.add(a);
 	}
 	
-	private void feedAllAnimals() {
+	public void feedAllAnimals() {
 		for(Animal a : animals) {
 			zookeper.feed(a);
 		}
