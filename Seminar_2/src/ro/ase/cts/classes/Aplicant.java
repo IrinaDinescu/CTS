@@ -1,5 +1,7 @@
 package ro.ase.cts.classes;
 
+import java.util.Arrays;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
@@ -64,5 +66,15 @@ public abstract class Aplicant{
 	    this.denumireProiect = vect;
 		
 	}
+	
+	public abstract float getSumaFinantare();
+	public abstract void afiseazaStatus(Proiect proiect);
+	
+	@Override
+	public String toString() {
+		return "Aplicant [nume=" + nume + ", prenume=" + prenume + ", varsta=" + varsta + ", punctaj=" + punctaj
+				+ ", nr_proiecte=" + nr_proiecte + ", denumireProiect=" + Arrays.toString(denumireProiect) + "]";
+	}
+	
 
 }

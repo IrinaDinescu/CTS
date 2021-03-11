@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class Student extends Aplicant {
 	protected String facultate;
 	protected int an_studii;
+	private static float sumaFinantare = 10;
+	
+	
 	
 	
 	public String getFacultate() {
@@ -19,8 +22,13 @@ public class Student extends Aplicant {
 	public void setAn_studii(int an_studii) {
 		this.an_studii = an_studii;
 	}
+	
+	
 
 
+	public static void setSumaFinantare(float sumaFinantare) {
+		Student.sumaFinantare = sumaFinantare;
+	}
 	public Student() {
 		super();
 		
@@ -33,6 +41,7 @@ public class Student extends Aplicant {
 	}
 	@Override
 	public String toString() {
+		
 		return "Student: Nume=" + nume + ", Prenume=" + prenume + ", Varsta=" + varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte +  ", DenumireProiect=" + Arrays.toString(denumireProiect) + "Facultate=" + facultate + ", An_studii=" + an_studii ;
 	}
 	
@@ -42,5 +51,17 @@ public class Student extends Aplicant {
 		System.out.println("Studentul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
 		return s;
 	}
+	@Override
+	public  float getSumaFinantare() {
+		
+		return sumaFinantare;
+	}
+	@Override
+	public void afiseazaStatus(Proiect proiect) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	
 }
