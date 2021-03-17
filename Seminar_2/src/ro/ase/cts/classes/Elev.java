@@ -11,27 +11,23 @@ public class Elev extends Aplicant{
 	public int getClasa() {
 		return clasa;
 	}
+	
 	public void setClasa(int i) {
 		this.clasa = i;
 	}
+	
 	public String getTutore() {
 		return tutore;
 	}
+	
 	public void setTutore(String tutore) {
 		this.tutore = tutore;
 	}
 	
 	
-	
-	
-	public static void setSumaFinantare(float sumaFinantare) {
-		Elev.sumaFinantare = sumaFinantare;
-	}
 	@Override
 	public String toString() {
-		return "Elev: Nume=" + nume + ", Prenume=" + prenume + ", Varsta="
-				+ varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte  + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Clasa=" + clasa + ", Tutore=" + tutore;
+		return "Elev: " + super.toString() + "Clasa=" + clasa + ", Tutore=" + tutore;
 	}
 	
 	public Elev() {
@@ -53,13 +49,15 @@ public class Elev extends Aplicant{
 	
 	@Override
 	public float getSumaFinantare() {
-		// TODO Auto-generated method stub
 		return sumaFinantare;
 	}
-	@Override
-	public void afiseazaStatus(Proiect proiect) {
-		// TODO Auto-generated method stub
-		
+	
+	public static float getSumaFinantata() {
+		return sumaFinantare;
+	}
+	
+	public static void setSumaFinantare(float sumaFinantare) {
+		Elev.sumaFinantare = sumaFinantare;
 	}
 	
 }

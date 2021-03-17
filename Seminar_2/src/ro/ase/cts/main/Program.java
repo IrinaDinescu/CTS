@@ -28,11 +28,11 @@ public class Program {
 		
 		try {
 			listaAplicanti = citesteAplicanti(new AngajatReader("angajati.txt"));
-			Proiect proiect = new Proiect(80);
+			
 			for(Aplicant angajat : listaAplicanti) {
 				System.out.println(angajat.toString());
-				angajat.afiseazaStatus(proiect);
-				
+				angajat.afiseazaStatus(new Proiect(80));
+				System.out.println(angajat.getSumaFinantare());				
 			}
 			
 			

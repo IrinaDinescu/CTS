@@ -17,17 +17,17 @@ public class ElevReader extends AplicantReader {
 	}
 
 	public List<Aplicant> citesteAplicanti() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.getFileName()));
-		input2.useDelimiter(",|\n");
+		Scanner input = new Scanner(new File(super.getFileName()));
+		input.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Elev elev = new Elev();
-			super.citesteAplicant(input2, elev);
+			super.citesteAplicant(input, elev);
 			
 			
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
+			int clasa = input.nextInt();
+			String tutore = input.next();
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
 			elevi.add(elev);
@@ -36,7 +36,7 @@ public class ElevReader extends AplicantReader {
 	
 		}
 
-		input2.close();
+		input.close();
 		return elevi;
 	}
 
