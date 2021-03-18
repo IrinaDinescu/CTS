@@ -16,7 +16,7 @@ public class ClinicaVeterinaraLazy {
 		this.buget = buget;
 	}
 	
-	public static ClinicaVeterinaraLazy getInstance(String nume, String adresa, int numarMedici, float buget) {
+	public static synchronized ClinicaVeterinaraLazy  getInstance(String nume, String adresa, int numarMedici, float buget) {
 		if(instanta == null) {
 			instanta = new ClinicaVeterinaraLazy(nume, adresa, numarMedici, buget);
 			
@@ -28,6 +28,26 @@ public class ClinicaVeterinaraLazy {
 	public String toString() {
 		return "ClinicaVeterinaraLazy [nume=" + nume + ", adresa=" + adresa + ", numarMedici=" + numarMedici
 				+ ", buget=" + buget + "]";
+	}
+
+	public void setNume(String nume) {
+		this.nume = nume;
+	}
+
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
+	}
+
+	public void setNumarMedici(int numarMedici) {
+		this.numarMedici = numarMedici;
+	}
+
+	public void setBuget(float buget) {
+		this.buget = buget;
+	}
+
+	public static void setInstanta(ClinicaVeterinaraLazy instanta) {
+		ClinicaVeterinaraLazy.instanta = instanta;
 	}
 	
 	
