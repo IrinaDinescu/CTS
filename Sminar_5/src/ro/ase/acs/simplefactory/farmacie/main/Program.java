@@ -1,9 +1,9 @@
-package ro.ase.acs.farmacie.main;
+package ro.ase.acs.simplefactory.farmacie.main;
 
-import ro.ase.acs.farmacie.Categorie;
-import ro.ase.acs.farmacie.CategorieFactory;
-import ro.ase.acs.farmacie.CategoriiMedicamente;
-import ro.ase.acs.farmacie.Durere;
+import ro.ase.acs.simplefactory.farmacie.Categorie;
+import ro.ase.acs.simplefactory.farmacie.CategorieFactory;
+import ro.ase.acs.simplefactory.farmacie.CategoriiMedicamente;
+import ro.ase.acs.simplefactory.farmacie.Durere;
 
 public class Program {
 	

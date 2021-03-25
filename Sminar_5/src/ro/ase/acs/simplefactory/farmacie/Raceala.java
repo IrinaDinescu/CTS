@@ -1,4 +1,4 @@
-package ro.ase.acs.farmacie;
+package ro.ase.acs.simplefactory.farmacie;
 
 public class Raceala  extends Categorie{
 
