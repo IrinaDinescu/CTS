@@ -13,6 +13,9 @@ public class Program {
 	    Rezervare rezervare2 = new Builder().setCodRezervare(3).setMancareInclusa(true).build();
 	    
 	    System.out.println(rezervare2);
+	    
+	    Rezervare.Builder rezervare3 =
+	    		new Rezervare.Builder().setBauturaRacoritoare(true);
 
 	}
 
