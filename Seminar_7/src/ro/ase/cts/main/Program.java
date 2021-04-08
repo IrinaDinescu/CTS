@@ -4,6 +4,10 @@ import ro.ase.cts.adapter.classes.AdapterCreditClase;
 import ro.ase.cts.adapter.classes.AdapterCreditObj;
 import ro.ase.cts.adapter.classes.InterfaceCredit;
 import ro.ase.cts.adapter.classes.Leasing;
+import ro.ase.cts.decorator.AbstractDecorator;
+import ro.ase.cts.decorator.Card;
+import ro.ase.cts.decorator.ConcreteDecorator;
+import ro.ase.cts.decorator.ICard;
 
 public class Program {
 	
@@ -20,6 +24,12 @@ public class Program {
 		AdapterCreditClase adapterClase = new AdapterCreditClase();
 		oferInfoCredit(adapterClase, "Gigel", 322.32f);
 
+		ICard card = new Card("Maria");
+		card.platesteFizic();
+		card.platesteOnline();
+		
+		AbstractDecorator decorator = new ConcreteDecorator(card);
+		decorator.platesteContactLess();
 	}
 
 }
