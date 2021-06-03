@@ -5,15 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.junit.experimental.categories.Category;
 
 import ro.ase.cts.clase.Grupa;
 import ro.ase.cts.clase.Student;
+import ro.ase.cts.test.suite.categorii.TesteGetPromovabilitate;
+import ro.ase.cts.test.suite.categorii.TesteNormale;
+import ro.ase.cts.test.suite.categorii.TesteUrgente;
 
 public class GrupaTest {
 	
 
 
+	@Category(TesteUrgente.class)
 	@Test
 	public void constructorTest() {
 		Grupa grupa = new Grupa(1100);
@@ -37,6 +41,8 @@ public class GrupaTest {
 		Grupa grupa = new Grupa(1300);
 	}
 	
+	
+	@Category({TesteUrgente.class, TesteGetPromovabilitate.class})
 	@Test
 	public void corectitudinePromovabilitateTest() {
 		Grupa grupa = new Grupa(1005);
@@ -48,6 +54,7 @@ public class GrupaTest {
 		assertEquals(0.6f, grupa.getPromovabilitate(),.001f);
 	}
 	
+	@Category({TesteNormale.class, TesteGetPromovabilitate.class})
 	@Test
 	public void limitaInferioaraPromovabilitateTest() {
 		Grupa grupa = new Grupa(1005);
@@ -59,12 +66,14 @@ public class GrupaTest {
 		assertEquals(0.0f, grupa.getPromovabilitate(),.001f);
 	}
 	
+	@Category({ TesteGetPromovabilitate.class})
 	@Test
 	public void BounderyPromovabilitate() {
 		Grupa grupa = new Grupa(1010);
 		assertEquals(0, grupa.getPromovabilitate(), 0.001f);
 	}
 	
+	@Category({TesteNormale.class, TesteGetPromovabilitate.class})
 	@Test
 	public void cardinalityPromovabilitateTest() {
 		Grupa grupa = new Grupa(1050);
